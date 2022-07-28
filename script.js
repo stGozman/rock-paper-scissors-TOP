@@ -7,7 +7,7 @@ function getComputerChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-// * Function to get player choice
+// Function to get player choice
 function getPlayerChoice() {
   // Ask player for a choice
   let playerChoice = prompt("Choose between rock, paper and scissors: ");

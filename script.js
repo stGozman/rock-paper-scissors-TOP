@@ -40,8 +40,9 @@ function playRound(playerSelection, computerSelection) {
 function game() {
   let playerScore = 0;
   let computerScore = 0;
+  let result
   for (; ;) {
-    let result = playRound(getPlayerChoice(), getComputerChoice());
+    result = playRound(getPlayerChoice(), getComputerChoice());
 
     if (((result === "You win this round! Paper beats Rock.") ||
     (result === "You win this round! Scissors beats Paper.") ||

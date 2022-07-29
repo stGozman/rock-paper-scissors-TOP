@@ -41,7 +41,7 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
   let result
-  for (; ;) {
+  for (;;) {
     result = playRound(getPlayerChoice(), getComputerChoice());
 
     if (((result === "You win this round! Paper beats Rock.") ||

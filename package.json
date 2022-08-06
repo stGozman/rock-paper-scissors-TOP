@@ -1,0 +1,24 @@
+{
+  "name": "rock-paper-scissors-top",
+  "version": "1.0.0",
+  "description": "A Rock Paper Scissors game. To be made in completion of The Odin Project.",
+  "main": "script.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/style.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gozmanfaraday/rock-paper-scissors-TOP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gozmanfaraday/rock-paper-scissors-TOP/issues"
+  },
+  "homepage": "https://github.com/gozmanfaraday/rock-paper-scissors-TOP#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}

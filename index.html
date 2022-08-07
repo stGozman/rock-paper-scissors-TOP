@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://api.fontshare.com/v2/css?f[]=outfit@400&f[]=sentient@400&f[]=boxing@400&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=boxing@400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&family=Space+Grotesk&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <title>Rock Paper Scissors</title>
   </head>
 
-  <body class="font-outfit">
+  <body class="font-averia">
     <!-- Page 1 -->
-    <div class="bg-myWhite h-screen">
+    <div class="bg-myWhite h-screen text-center flex flex-col justify-between">
+      <!-- Title -->
       <div class="bg-mutedYellow border-b-4 border-solid border-myBlack">
-        <div class="container mx-auto py-8">
-          <h1 class="text-4xl text-myBlack font-sentient text-center">
-            Rock. Paper. Scissors.
+        <div class="container mx-auto pb-1 pt-4">
+          <h1 class="text-6xl text-myBlack font-bold font-elite">
+            <span class="font-pressStart">Rock.</span> <span>Paper.</span> <span>Scissors.</span>
           </h1>
         </div>
       </div>
-      <div class="container mx-auto font-grotesk">
-        <div class="text-center mt-40 px-8">
-          <p class="text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae accusamus doloremque culpa dolorum maiores at rem aliquam corporis porro! Minima blanditiis ullam dolores qui iste perferendis mollitia officia. Harum aliquid commodi quaerat animi aliquam quidem ad laboriosam soluta ducimus possimus.
-          </p>
-        </div>
+
+      <!-- Short Desc -->
+      <div class="container mx-auto px-8">
+        <p class="text-2xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, qui! Aspernatur autem magnam qui at nesciunt temporibus adipisci dolorum deleniti explicabo. Reprehenderit repellat nihil voluptate iste soluta fugiat ratione iusto!
+        </p>
+      </div>
+
+      <!-- Start Button -->
+      <div class="container mx-auto font-boxing text-2xl mb-32">
+        <button class="bg-mutedYellow border-solid border-4 border-myBlack py-1 px-4 hover:bg-lightGray">
+          Start The Game
+        </button>
       </div>
     </div>
     

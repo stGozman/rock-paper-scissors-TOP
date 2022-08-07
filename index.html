@@ -12,33 +12,39 @@
     <title>Rock Paper Scissors</title>
   </head>
 
-  <body class="font-averia">
-    <!-- Page 1 -->
-    <div class="bg-myWhite h-screen text-center flex flex-col justify-between">
+  <body class="font-averia overflow-hidden">
+    <!-- Intro Page -->
+    <div id="introPage" class="bg-myWhite h-screen text-center flex flex-col justify-between">
       <!-- Title -->
       <div class="bg-mutedYellow border-b-4 border-solid border-myBlack">
         <div class="container mx-auto pb-1 pt-4">
-          <h1 class="text-6xl text-myBlack font-bold font-elite">
-            <span class="font-pressStart">Rock.</span> <span>Paper.</span> <span>Scissors.</span>
+          <h1 class="text-5xl text-myBlack font-bold font-elite md:text-7xl">
+            Rock. Paper. Scissors.
           </h1>
         </div>
       </div>
 
       <!-- Short Desc -->
-      <div class="container mx-auto px-8">
-        <p class="text-2xl">
+      <div class="container mx-auto px-8 md:px-12">
+        <p class="text-2xl md:text-4xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, qui! Aspernatur autem magnam qui at nesciunt temporibus adipisci dolorum deleniti explicabo. Reprehenderit repellat nihil voluptate iste soluta fugiat ratione iusto!
         </p>
       </div>
 
       <!-- Start Button -->
-      <div class="container mx-auto font-boxing text-2xl mb-32">
-        <button class="bg-mutedYellow border-solid border-4 border-myBlack py-1 px-4 hover:bg-lightGray">
-          Start The Game
+      <div class="container mx-auto font-boxing text-2xl mb-20 md:text-4xl md:mb-24">
+        <button  class="bg-mutedYellow border-solid border-4 border-myBlack py-2 px-6 transition ease-in-out duration-300 delay-100 hover:bg-lightGray hover:scale-105">
+          <a href="#gamePage">
+            Start The Game
+          </a>
         </button>
       </div>
     </div>
+
+    <!-- Game Page -->
+    <div id="gamePage" class="bg-myWhite h-screen">
     
+    </div>
     <script src="/script.js"></script>
   </body>
 </html>

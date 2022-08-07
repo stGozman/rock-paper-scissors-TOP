@@ -17,9 +17,10 @@ module.exports = {
         'myWhite': '#ffffff',
       },
       fontFamily: {
-        outfit: ['Outfit', 'sans-serif'],
         boxing: ['Boxing', 'sans-serif'],
-        sentient: ['Sentient', 'serif'],
+        averia: ['Averia Libre', 'cursive'],
+        elite: ['Special Elite', 'cursive'],
+        grotesk: ['Space Grotesk', 'sans-serif'],
       },
     },
   },

@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-#introPage,
-#gamePage {
+#intro-page,
+#game-page {
   position: relative;
 }
 
-#introPage::before,
-#gamePage::before {
+#intro-page::before,
+#game-page::before {
   content: '';
   background: url('/img/bg-image.jpeg') no-repeat center center/cover;
   position: absolute;
@@ -21,12 +21,4 @@
 
 .upperZ {
   z-index: 1;
-}
-
-#playerImages img {
-  transform: rotateY(180deg);
-}
-
-#playerImages img:hover {
-  transform: scale(1.1);
 }

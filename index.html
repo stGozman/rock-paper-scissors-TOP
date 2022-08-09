@@ -13,54 +13,26 @@
   </head>
 
   <body class="font-averia">
-    <!-- Intro Page -->
-    <div id="introPage" class="bg-camoGreen h-screen text-center flex flex-col justify-between">
-      <!-- Title -->
-      <div id="introTitle" class="upperZ bg-mutedYellow border-b-4 border-solid border-myBlack">
-        <div class="container mx-auto pb-0 pt-2">
-          <h1 class="text-3xl text-myBlack font-bold font-elite sm:text-4xl md:text-6xl">
-            Rock. Paper. Scissors.
-          </h1>
-        </div>
-      </div>
-
-      <!-- Short Desc -->
-      <div id="desc" class="upperZ container mx-auto px-8 md:px-12">
-        <p class="text-2xl md:text-4xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, qui! Aspernatur autem magnam qui at nesciunt temporibus adipisci dolorum deleniti explicabo. Reprehenderit repellat nihil voluptate iste soluta fugiat ratione iusto!
-        </p>
-      </div>
-
-      <!-- Start Button -->
-      <div id="startButton" class="upperZ container mx-auto font-boxing text-xl mb-20 sm:text-2xl md:text-4xl md:mb-24">
-        <button  class="bg-mutedYellow border-solid border-4 border-myBlack py-2 px-6 transition ease-in-out duration-300 delay-100 hover:bg-lightGray hover:scale-105">
-          <a href="#gamePage">
-            Start The Game
-          </a>
-        </button>
-      </div>
-    </div>
-
     <!-- Game Page -->
-    <div id="gamePage" class="bg-camoGreen h-screen text-center flex flex-col justify-between">
+    <div id="game-page" class="bg-camoGreen h-screen text-center flex flex-col justify-between">
       <!-- Title -->
-      <div id="gameTitle" class="upperZ bg-mutedYellow border-b-4 border-solid border-myBlack">
+      <div id="game-title" class="upperZ bg-mutedYellow border-b-4 border-solid border-myBlack">
         <div class="container mx-auto pb-0 pt-2">
-          <h1 class="text-3xl text-myBlack font-bold font-elite sm:text-4xl md:text-6xl">
+          <h1 class="rps text-3xl text-myBlack font-bold font-elite sm:text-4xl md:text-6xl">
             Rock. Paper. Scissors.
           </h1>
         </div>
       </div>
 
       <!-- Game Screen -->
-      <div id="gameScreen" class="upperZ container mx-auto px-8 flex flex-col justify-between gap-6 md:gap-8">
+      <div id="game-screen" class="upperZ container mx-auto px-8 flex flex-col justify-between gap-6 sm:gap-12 md:gap-20 lg:gap-8">
         <!-- Game Area -->
-        <div class="flex flex-col justify-center items-center gap-4 md:flex-row md:gap-16">
-          <!-- Computer Images -->
-          <div id="computerImages" class="flex justify-center items-center gap-6 md:flex-col">
-            <img class="w-20" src="/img/rock.png" alt="rock">
-            <img class="w-20" src="/img/paper.png" alt="paper">
-            <img class="w-20" src="/img/scissors.png" alt="scissors">
+        <div class="flex flex-col justify-center items-center gap-4 sm:gap-10 md:flex-row md:gap-16">
+          <!-- Computer Items -->
+          <div id="computer-items" class="flex justify-center items-center gap-10 md:flex-col lg:gap-6">
+            <img id="computer-rock" class="w-16 md:w-20 rounded-full" src="/img/rock.png" alt="rock">
+            <img id="computer-paper" class="w-16 md:w-20 rounded-full" src="/img/paper.png" alt="paper">
+            <img id="computer-scissors" class="w-16 md:w-20 rounded-full" src="/img/scissors.png" alt="scissors">
           </div>
 
           <!-- Game Score -->
@@ -93,32 +65,30 @@
             </div>
           </div>
 
-          <!-- Player Images -->
-          <div id="playerImages" class="flex justify-center items-center gap-6 md:flex-col">
-            <img class="w-20 cursor-pointer transition ease-in-out" src="/img/rock.png" alt="rock">
-            <img class="w-20 cursor-pointer transition ease-in-out" src="/img/paper.png" alt="paper">
-            <img class="w-20 cursor-pointer transition ease-in-out" src="/img/scissors.png" alt="scissors">
+          <!-- Player Items -->
+          <div id="player-items" class="flex justify-center items-center gap-10 md:flex-col lg:gap-6">
+            <img id="player-rock" class="w-16 md:w-20 cursor-pointer rounded-full" src="/img/rock-flipped.png" alt="rock">
+            <img id="player-paper" class="w-16 md:w-20 cursor-pointer rounded-full" src="/img/paper-flipped.png" alt="paper">
+            <img id="player-scissors" class="w-16 md:w-20 cursor-pointer rounded-full" src="/img/scissors-flipped.png" alt="scissors">
           </div>
-        </div>
-
-        <!-- Game Info -->
-        <div class="space-y-3">
-          <p class="text-2xl">
-            Choose between Rock, Paper and Scissors
-          </p>
-          <p class="text-3xl">
-            Tie Game!
-          </p>
         </div>
       </div>
 
+      <!-- Game Info -->
+      <div id="game-info" class="upperZ container mx-auto space-y-3 sm:space-y-6 lg:space-y-2">
+        <p id="round-result" class="text-2xl sm:text-3xl">
+          Choose between Rock, Paper and Scissors
+        </p>
+        <p id="final-result" class="invisible text-3xl sm:text-4xl">
+          Final Results!
+        </p>
+      </div>
+
       <!-- Play Again -->
-      <div id="playAgain" class="upperZ container mx-auto font-boxing text-xl mb-12 sm:text-2xl md:text-4xl">
-        <button  class="bg-mutedYellow border-solid border-4 border-myBlack py-2 px-6 transition ease-in-out duration-300 delay-100 hover:bg-lightGray hover:scale-105">
-          <a href="#gamePage">
-            Play Again
-          </a>
-        </button>
+      <div id="play-again" class="upperZ container mx-auto font-boxing text-xl mb-12 sm:text-2xl md:text-4xl">
+        <a class="bg-mutedYellow border-solid border-4 border-myBlack py-3 px-6 transition ease-in-out duration-300 delay-100 hover:bg-lightGray hover:scale-105" href="#gamePage">
+          Play Again
+        </a>
       </div>
     </div>
 

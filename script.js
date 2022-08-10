@@ -13,10 +13,10 @@ function playRound() {
       });
 
       Array.from(computerItems).forEach(computerItem => {
-        computerItem.setAttribute('class', 'w-16 md:w-20 cursor-pointer rounded-full');
+        computerItem.setAttribute('class', 'w-16 md:w-20 rounded-full');
       });
 
-      e.target.setAttribute('class', 'w-16 md:w-20 cursor-pointer rounded-full scale-125 border-lightGray border-4 border-solid');
+      // e.target.setAttribute('class', 'w-16 md:w-20 cursor-pointer rounded-full scale-125 border-lightGray border-4 border-solid');
       e.target.setAttribute('class', 'w-16 md:w-20 rounded-full cursor-pointer hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
 
       if (e.target.id === 'player-rock') {
@@ -26,7 +26,7 @@ function playRound() {
       } else {
         playerChoice = 'scissors';
       }
-      console.log(playerChoice);
+      // console.log(playerChoice);
 
       // Make and return a random choice from an array of choices
       let choices = ["rock", "paper", "scissors"];
@@ -34,15 +34,15 @@ function playRound() {
 
       if (computerChoice === 'rock') {
         let computerRock = document.querySelector('#computer-rock');
-        computerRock.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-black');
+        computerRock.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-lightGray');
       } else if (computerChoice === 'paper') {
         let computerPaper = document.querySelector('#computer-paper');
-        computerPaper.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-black');
+        computerPaper.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-lightGray');
       } else {
         let computerScissors = document.querySelector('#computer-scissors');
-        computerScissors.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-black');
+        computerScissors.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-lightGray');
       }
-      console.log(computerChoice);
+      // console.log(computerChoice);
 
       // Compare Player Choice with Computer Choice
       let roundResult = document.querySelector('#round-result');

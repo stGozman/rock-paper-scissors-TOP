@@ -3,18 +3,27 @@
 // Function to play one round
 function playRound() {
   const playerItems = document.querySelectorAll('#player-items img');
+  const computerItems = document.querySelectorAll('#computer-items img');
   let playerChoice;
 
   Array.from(playerItems).forEach(playerItem => {
     playerItem.addEventListener('click', e => {
+      Array.from(playerItems).forEach(playerItem => {
+        playerItem.setAttribute('class', 'w-16 md:w-20 rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
+      });
+
+      Array.from(computerItems).forEach(computerItem => {
+        computerItem.setAttribute('class', 'w-16 md:w-20 cursor-pointer rounded-full');
+      });
+
+      e.target.setAttribute('class', 'w-16 md:w-20 cursor-pointer rounded-full scale-125 border-lightGray border-4 border-solid');
+      e.target.setAttribute('class', 'w-16 md:w-20 rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
+
       if (e.target.id === 'player-rock') {
-        e.target.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
         playerChoice = 'rock';
       } else if (e.target.id === 'player-paper') {
-        e.target.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
         playerChoice = 'paper';
       } else {
-        e.target.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
         playerChoice = 'scissors';
       }
       console.log(playerChoice);
@@ -25,33 +34,33 @@ function playRound() {
 
       if (computerChoice === 'rock') {
         let computerRock = document.querySelector('#computer-rock');
-        computerRock.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
+        computerRock.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-black');
       } else if (computerChoice === 'paper') {
         let computerPaper = document.querySelector('#computer-paper');
-        computerPaper.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
+        computerPaper.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-black');
       } else {
         let computerScissors = document.querySelector('#computer-scissors');
-        computerScissors.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
+        computerScissors.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-black');
       }
       console.log(computerChoice);
 
       // Compare Player Choice with Computer Choice
-      let result;
+      let roundResult = document.querySelector('#round-result');
       let upperPlayerChoice = (playerChoice.charAt(0)).toUpperCase() + playerChoice.slice(1);
       let upperComputerChoice = (computerChoice.charAt(0)).toUpperCase() + computerChoice.slice(1);
 
       if (playerChoice === computerChoice) {
-        result = 'Tie Game!';
+        roundResult.textContent = 'Tie Game! No winner, no loser. Go again!';
       } else if ((playerChoice === "paper") && (computerChoice === "rock") ||
       ((playerChoice === "scissors") && (computerChoice === "paper")) ||
       ((playerChoice === "rock") && (computerChoice === "scissors"))) {
-        result = `You win this round! ${upperPlayerChoice} beats ${upperComputerChoice}.`;
+        roundResult.textContent = `You win this round! ${upperPlayerChoice} beats ${upperComputerChoice}.`;
       } else {
-        result = `You lose this round! ${upperComputerChoice} beats ${upperPlayerChoice}.`;
+        roundResult.textContent = `You lose this round! ${upperComputerChoice} beats ${upperPlayerChoice}.`;
       }
 
-      console.log(result);
-      return result;
+      console.log(roundResult);
+      return roundResult;
     });
   });
 }
@@ -94,80 +103,3 @@ function game() {
     console.log("You've lost the game!");
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Function to get computer choice randomly
-// function computerChoice {
-//   // Make and return a random choice from an array of choices
-//   let choices = ["rock", "paper", "scissors"];
-//   let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-
-//   if (computerChoice === 'rock') {
-//     let computerRock = document.querySelector('#computer-rock');
-//     computerRock.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
-//   } else if (computerChoice === 'paper') {
-//     let computerPaper = document.querySelector('#computer-paper');
-//     computerPaper.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
-//   } else {
-//     let computerScissors = document.querySelector('#computer-scissors');
-//     computerScissors.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
-//   }
-
-//   return computerChoice;
-// }
-
-// // Function to get player choice
-// function playerChoice {
-//   const playerItems = document.querySelectorAll('#player-items img');
-//   let playerChoice;
-
-//   Array.from(playerItems).forEach(playerItem => {
-//     playerItem.addEventListener('click', e => {
-//       if (e.target.id === 'player-rock') {
-//         e.target.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
-//         playerChoice = 'rock';
-//       } else if (e.target.id === 'player-paper') {
-//         e.target.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
-//         playerChoice = 'paper';
-//       } else {
-//         e.target.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
-//         playerChoice = 'scissors';
-//       }
-
-//       // Make and return a random choice from an array of choices
-//       let choices = ["rock", "paper", "scissors"];
-//       let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-
-//       if (computerChoice === 'rock') {
-//         let computerRock = document.querySelector('#computer-rock');
-//         computerRock.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
-//       } else if (computerChoice === 'paper') {
-//         let computerPaper = document.querySelector('#computer-paper');
-//         computerPaper.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
-//       } else {
-//         let computerScissors = document.querySelector('#computer-scissors');
-//         computerScissors.setAttribute('class', 'w-20 border-lightGray border-4 border-solid rounded-full transition scale-125');
-//       }
-//       return playerChoice;
-//     });
-//   });
-// }

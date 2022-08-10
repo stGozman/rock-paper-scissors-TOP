@@ -9,7 +9,7 @@ function playRound() {
   Array.from(playerItems).forEach(playerItem => {
     playerItem.addEventListener('click', e => {
       Array.from(playerItems).forEach(playerItem => {
-        playerItem.setAttribute('class', 'w-16 md:w-20 rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
+        playerItem.setAttribute('class', 'w-16 md:w-20 rounded-full cursor-pointer hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
       });
 
       Array.from(computerItems).forEach(computerItem => {
@@ -17,7 +17,7 @@ function playRound() {
       });
 
       e.target.setAttribute('class', 'w-16 md:w-20 cursor-pointer rounded-full scale-125 border-lightGray border-4 border-solid');
-      e.target.setAttribute('class', 'w-16 md:w-20 rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
+      e.target.setAttribute('class', 'w-16 md:w-20 rounded-full cursor-pointer hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
 
       if (e.target.id === 'player-rock') {
         playerChoice = 'rock';

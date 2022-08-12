@@ -66,13 +66,22 @@ function scoreCounter(playerChoice, computerChoice) {
     reset.firstElementChild.textContent = 'Play Again';
 
     resetItems();
+
+    Array.from(playerItems).forEach(playerItem => {
+      playerItem.setAttribute('class', 'w-20 md:w-20 rounded-full');
+    });
   }
 
   if (cScore === 5) {
     finalResult.textContent = "You've lost the game! Give it another try.";
     roundResult.textContent = 'Click the play again button to restart the game.';
     reset.firstElementChild.textContent = 'Play Again';
+
     resetItems();
+
+    Array.from(playerItems).forEach(playerItem => {
+      playerItem.setAttribute('class', 'w-20 md:w-20 rounded-full');
+    });
   }
 }
 

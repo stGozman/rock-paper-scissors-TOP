@@ -28,49 +28,51 @@
       <div id="game-screen" class="upperZ container mx-auto px-8 flex flex-col justify-between gap-6 sm:gap-12 md:gap-20 lg:gap-8">
         <!-- Game Area -->
         <div class="flex flex-col justify-center items-center gap-4 sm:gap-10 md:flex-row md:gap-16">
-          <!-- Computer Items -->
-          <div id="computer-items" class="flex justify-center items-center gap-10 md:flex-col lg:gap-6">
-            <img id="computer-rock" class="w-16 md:w-20 rounded-full" src="/img/rock.png" alt="rock">
-            <img id="computer-paper" class="w-16 md:w-20 rounded-full" src="/img/paper.png" alt="paper">
-            <img id="computer-scissors" class="w-16 md:w-20 rounded-full" src="/img/scissors.png" alt="scissors">
+          <!-- Player Items -->
+          <div id="player-items" class="flex justify-center items-center gap-10 md:flex-col lg:gap-6">
+            <img id="player-rock" class="w-16 md:w-20 cursor-pointer rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black" src="/img/rock.png" alt="rock">
+            <img id="player-paper" class="w-16 md:w-20 cursor-pointer rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black" src="/img/paper.png" alt="paper">
+            <img id="player-scissors" class="w-16 md:w-20 cursor-pointer rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black" src="/img/scissors.png" alt="scissors">
           </div>
 
           <!-- Game Score -->
           <div>
             <!-- Scoreboard -->
             <div class="flex justify-center gap-2 sm:gap-4">
-              <!-- Computer Score -->
+              <!-- Player Score -->
               <div>
-                <p class="text-xl sm:text-2xl">Computer</p>
-                <p id="computer-score" class="text-8xl leading-[5rem] font-boxing sm:text-9xl sm:leading-[7rem]">0</p>
-                <p class="invisible text-xl sm:text-2xl">Player</p>
+                <p class="text-xl sm:text-2xl">Player</p>
+                <p id="player-score" class="text-8xl leading-[5rem] font-boxing sm:text-9xl sm:leading-[7rem]">0</p>
+                <p class="invisible text-xl sm:text-2xl leading-[1rem]">Computer</p>
               </div>
+
               <!-- Divider -->
               <div>
                 <p class="invisible text-xl sm:text-2xl">Computer</p>
                 <p class="text-8xl leading-[5rem] font-boxing sm:text-9xl sm:leading-[7rem]">-</p>
                 <p class="invisible text-xl sm:text-2xl">Player</p>
               </div>
-              <!-- Player Score -->
+
+              <!-- Computer Score -->
               <div>
-                <p class="invisible text-xl sm:text-2xl">Computer</p>
-                <p id="player-score" class="text-8xl leading-[5rem] font-boxing sm:text-9xl sm:leading-[7rem]">0</p>
-                <p class="text-xl sm:text-2xl leading-[1rem]">Player</p>
+                <p class="invisible text-xl sm:text-2xl">Player</p>
+                <p id="computer-score" class="text-8xl leading-[5rem] font-boxing sm:text-9xl sm:leading-[7rem]">0</p>
+                <p class="text-xl sm:text-2xl">Computer</p>
               </div>
             </div>
           </div>
 
-          <!-- Player Items -->
-          <div id="player-items" class="flex justify-center items-center gap-10 md:flex-col lg:gap-6">
-            <img id="player-rock" class="w-16 md:w-20 cursor-pointer rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black" src="/img/rock-flipped.png" alt="rock">
-            <img id="player-paper" class="w-16 md:w-20 cursor-pointer rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black" src="/img/paper-flipped.png" alt="paper">
-            <img id="player-scissors" class="w-16 md:w-20 cursor-pointer rounded-full hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black" src="/img/scissors-flipped.png" alt="scissors">
+          <!-- Computer Items -->
+          <div id="computer-items" class="flex justify-center items-center gap-10 md:flex-col lg:gap-6">
+            <img id="computer-rock" class="w-16 md:w-20 rounded-full" src="/img/rock-flipped.png" alt="rock">
+            <img id="computer-paper" class="w-16 md:w-20 rounded-full" src="/img/paper-flipped.png" alt="paper">
+            <img id="computer-scissors" class="w-16 md:w-20 rounded-full" src="/img/scissors-flipped.png" alt="scissors">
           </div>
         </div>
       </div>
 
       <!-- Game Info -->
-      <div id="game-info" class="upperZ container mx-auto space-y-3 sm:space-y-6 lg:space-y-2">
+      <div id="game-info" class="upperZ container mx-auto px-4 space-y-3 sm:space-y-6 lg:space-y-2">
         <p id="round-result" class="text-2xl sm:text-3xl">
           Choose between Rock, Paper and Scissors!
         </p>
@@ -79,13 +81,13 @@
         </p>
       </div>
 
-      <!-- Play Again -->
-      <div id="play-again" class="upperZ invisible container mx-auto font-boxing text-xl mb-12 sm:text-2xl md:text-4xl">
+      <!-- Reset -->
+      <div id="reset" class="upperZ container mx-auto font-boxing text-xl mb-12 sm:text-2xl md:text-4xl">
         <a class="bg-mutedYellow border-solid border-4 border-myBlack py-3 px-6 transition ease-in-out duration-300 delay-100 hover:bg-lightGray hover:scale-105" href="#gamePage">
-          Play Again
+          Reset
         </a>
       </div>
     </div>
 
-    <script src="/trial.js"></script>
+    <script src="script.js"></script>
 </html>

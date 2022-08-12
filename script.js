@@ -62,7 +62,7 @@ function scoreCounter(playerChoice, computerChoice) {
 
   if (pScore === 5) {
     finalResult.textContent = "Congratulations! You've won the game!";
-    roundResult.textContent = 'Click the play again button to refresh the game.';
+    roundResult.textContent = 'Click the play again button to restart the game.';
     reset.firstElementChild.textContent = 'Play Again';
 
     resetItems();
@@ -70,7 +70,7 @@ function scoreCounter(playerChoice, computerChoice) {
 
   if (cScore === 5) {
     finalResult.textContent = "You've lost the game! Give it another try.";
-    roundResult.textContent = 'Click the play again button to refresh the game.';
+    roundResult.textContent = 'Click the play again button to restart the game.';
     reset.firstElementChild.textContent = 'Play Again';
     resetItems();
   }

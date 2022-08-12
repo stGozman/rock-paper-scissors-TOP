@@ -634,20 +634,12 @@ video {
   gap: 1.5rem;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
-.gap-10 {
-  gap: 2.5rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
 
-.gap-1 {
-  gap: 0.25rem;
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .rounded-full {
@@ -856,24 +848,28 @@ video {
 }
 
 @media (min-width: 412px) {
+  .sm\:mb-20 {
+    margin-bottom: 5rem;
+  }
+
+  .sm\:mb-24 {
+    margin-bottom: 6rem;
+  }
+
   .sm\:gap-12 {
     gap: 3rem;
   }
 
-  .sm\:gap-10 {
-    gap: 2.5rem;
+  .sm\:gap-6 {
+    gap: 1.5rem;
   }
 
   .sm\:gap-4 {
     gap: 1rem;
   }
 
-  .sm\:gap-5 {
-    gap: 1.25rem;
-  }
-
-  .sm\:gap-6 {
-    gap: 1.5rem;
+  .sm\:gap-8 {
+    gap: 2rem;
   }
 
   .sm\:text-4xl {
@@ -896,11 +892,6 @@ video {
     line-height: 2.25rem;
   }
 
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
   .sm\:leading-\[7rem\] {
     line-height: 7rem;
   }
@@ -919,6 +910,10 @@ video {
     flex-direction: column;
   }
 
+  .md\:justify-center {
+    justify-content: center;
+  }
+
   .md\:gap-20 {
     gap: 5rem;
   }
@@ -927,28 +922,44 @@ video {
     gap: 4rem;
   }
 
+  .md\:gap-10 {
+    gap: 2.5rem;
+  }
+
   .md\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 @media (min-width: 976px) {
+  .lg\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
+  .lg\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
   .lg\:gap-8 {
     gap: 2rem;
   }
 
   .lg\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .lg\:gap-4 {
+    gap: 1rem;
   }
 }

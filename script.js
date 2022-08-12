@@ -21,11 +21,11 @@ function computerChoice() {
   let computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
   if (computerChoice === 'rock') {
-    computerRock.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-lightGray');
+    computerRock.setAttribute('class', 'w-20 md:w-20 rounded-full border-4 border-solid scale-125 border-lightGray');
   } else if (computerChoice === 'paper') {
-    computerPaper.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-lightGray');
+    computerPaper.setAttribute('class', 'w-20 md:w-20 rounded-full border-4 border-solid scale-125 border-lightGray');
   } else {
-    computerScissors.setAttribute('class', 'w-16 md:w-20 rounded-full border-4 border-solid scale-150 border-lightGray');
+    computerScissors.setAttribute('class', 'w-20 md:w-20 rounded-full border-4 border-solid scale-125 border-lightGray');
   }
 
   return computerChoice;
@@ -86,7 +86,7 @@ function playGame() {
     playerItem.addEventListener('click', e => {
       resetItems();
 
-      e.target.setAttribute('class', 'w-16 md:w-20 rounded-full cursor-pointer hover:scale-125 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
+      e.target.setAttribute('class', 'w-20 md:w-20 rounded-full cursor-pointer hover:scale-125 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
 
       if (e.target.id === 'player-rock') {
         playerChoice = 'rock';
@@ -119,11 +119,11 @@ function resetGame() {
 // Function to reset the playing items
 function resetItems() {
   Array.from(playerItems).forEach(playerItem => {
-    playerItem.setAttribute('class', 'w-16 md:w-20 rounded-full cursor-pointer hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
+    playerItem.setAttribute('class', 'w-20 md:w-20 rounded-full cursor-pointer hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
   });
 
   Array.from(computerItems).forEach(computerItem => {
-    computerItem.setAttribute('class', 'w-16 md:w-20 rounded-full');
+    computerItem.setAttribute('class', 'w-20 md:w-20 rounded-full');
   });
 }
 

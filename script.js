@@ -45,6 +45,7 @@ function scoreCounter(playerChoice, computerChoice) {
       cScore;
     }
     playerScore.textContent = pScore;
+    roundResult.style.color = 'lawngreen';
     roundResult.textContent = `You win this round! ${upperPlayerChoice} beats ${upperComputerChoice}.`;
   } else if (((playerChoice === "rock") && (computerChoice === "paper")) ||
   ((playerChoice === "paper") && (computerChoice === "scissors")) ||
@@ -55,12 +56,16 @@ function scoreCounter(playerChoice, computerChoice) {
       cScore;
     }
     computerScore.textContent = cScore;
+    roundResult.style.color = '#e10600';
     roundResult.textContent = `You lose this round! ${upperComputerChoice} beats ${upperPlayerChoice}.`;
   } else {
+    roundResult.style.color = 'black';
     roundResult.textContent = 'Tie Game! No winner, no loser. Go again!';
   }
 
   if (pScore === 5) {
+    finalResult.style.color = 'lawngreen';
+    roundResult.style.color = 'black';
     finalResult.textContent = "Congratulations! You've won the game!";
     roundResult.textContent = 'Click the play again button to restart the game.';
     reset.firstElementChild.textContent = 'Play Again';
@@ -70,6 +75,8 @@ function scoreCounter(playerChoice, computerChoice) {
   }
 
   if (cScore === 5) {
+    finalResult.style.color = '#e10600';
+    roundResult.style.color = 'black';
     finalResult.textContent = "You've lost the game! Give it another try.";
     roundResult.textContent = 'Click the play again button to restart the game.';
     reset.firstElementChild.textContent = 'Play Again';
@@ -111,6 +118,8 @@ function resetGame() {
     cScore = 0;
     playerScore.textContent = pScore;
     computerScore.textContent = cScore;
+    roundResult.style.color = 'black';
+    finalResult.style.color = 'black';
     roundResult.textContent = 'Choose between Rock, Paper and Scissors!';
     finalResult.textContent = "First to score five wins the game!";
     reset.firstElementChild.textContent = 'Reset';

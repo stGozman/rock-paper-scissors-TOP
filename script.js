@@ -66,10 +66,7 @@ function scoreCounter(playerChoice, computerChoice) {
     reset.firstElementChild.textContent = 'Play Again';
 
     resetItems();
-
-    Array.from(playerItems).forEach(playerItem => {
-      playerItem.setAttribute('class', 'w-20 md:w-20 rounded-full');
-    });
+    nonClickable();
   }
 
   if (cScore === 5) {
@@ -78,10 +75,7 @@ function scoreCounter(playerChoice, computerChoice) {
     reset.firstElementChild.textContent = 'Play Again';
 
     resetItems();
-
-    Array.from(playerItems).forEach(playerItem => {
-      playerItem.setAttribute('class', 'w-20 md:w-20 rounded-full');
-    });
+    nonClickable();
   }
 }
 
@@ -133,6 +127,13 @@ function resetItems() {
 
   Array.from(computerItems).forEach(computerItem => {
     computerItem.setAttribute('class', 'w-20 md:w-20 rounded-full');
+  });
+}
+
+// Function to make player items non-clickable after win or lose
+function nonClickable() {
+  Array.from(playerItems).forEach(playerItem => {
+    playerItem.setAttribute('class', 'w-20 md:w-20 rounded-full');
   });
 }
 

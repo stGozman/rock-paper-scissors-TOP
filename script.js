@@ -1,19 +1,20 @@
 // ROCK PAPER SCISSORS
+
 // Player and Computer Scores
 let pScore = 0;
 let cScore = 0;
 
 // Document Element Selectors
-const playerItems = document.querySelectorAll('#player-items img');
-const computerItems = document.querySelectorAll('#computer-items img');
-const computerRock = document.querySelector('#computer-rock');
-const computerPaper = document.querySelector('#computer-paper');
-const computerScissors = document.querySelector('#computer-scissors');
-const playerScore = document.querySelector('#player-score');
-const computerScore = document.querySelector('#computer-score');
-const roundResult = document.querySelector('#round-result');
-const finalResult = document.querySelector('#final-result');
-const reset = document.querySelector('#reset');
+const playerItemsElements = document.querySelectorAll('#player-items img');
+const computerItemsElements = document.querySelectorAll('#computer-items img');
+const computerRockElement = document.querySelector('#computer-rock');
+const computerPaperElement = document.querySelector('#computer-paper');
+const computerScissorsElement = document.querySelector('#computer-scissors');
+const playerScoreElement = document.querySelector('#player-score');
+const computerScoreElement = document.querySelector('#computer-score');
+const roundResultElement = document.querySelector('#round-result');
+const finalResultElement = document.querySelector('#final-result');
+const resetElement = document.querySelector('#reset');
 
 // Function to get computer choice
 function computerChoice() {
@@ -21,11 +22,11 @@ function computerChoice() {
   let computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
   if (computerChoice === 'rock') {
-    computerRock.setAttribute('class', 'w-20 md:w-20 rounded-full border-4 border-solid scale-125 border-lightGray');
+    computerRockElement.setAttribute('class', 'w-20 md:w-20 rounded-full border-4 border-solid scale-125 border-lightGray');
   } else if (computerChoice === 'paper') {
-    computerPaper.setAttribute('class', 'w-20 md:w-20 rounded-full border-4 border-solid scale-125 border-lightGray');
+    computerPaperElement.setAttribute('class', 'w-20 md:w-20 rounded-full border-4 border-solid scale-125 border-lightGray');
   } else {
-    computerScissors.setAttribute('class', 'w-20 md:w-20 rounded-full border-4 border-solid scale-125 border-lightGray');
+    computerScissorsElement.setAttribute('class', 'w-20 md:w-20 rounded-full border-4 border-solid scale-125 border-lightGray');
   }
 
   return computerChoice;
@@ -44,9 +45,9 @@ function scoreCounter(playerChoice, computerChoice) {
     } else if ((pScore === 5) && (cScore < 5)) {
       cScore;
     }
-    playerScore.textContent = pScore;
-    roundResult.style.color = 'lawngreen';
-    roundResult.textContent = `You win this round! ${upperPlayerChoice} beats ${upperComputerChoice}.`;
+    playerScoreElement.textContent = pScore;
+    roundResultElement.style.color = 'lawngreen';
+    roundResultElement.textContent = `You win this round! ${upperPlayerChoice} beats ${upperComputerChoice}.`;
   } else if (((playerChoice === "rock") && (computerChoice === "paper")) ||
   ((playerChoice === "paper") && (computerChoice === "scissors")) ||
   ((playerChoice === "scissors") && (computerChoice === "rock"))) {
@@ -55,31 +56,40 @@ function scoreCounter(playerChoice, computerChoice) {
     } else if ((cScore === 5) && (pScore < 5)) {
       cScore;
     }
-    computerScore.textContent = cScore;
-    roundResult.style.color = '#e10600';
-    roundResult.textContent = `You lose this round! ${upperComputerChoice} beats ${upperPlayerChoice}.`;
+    computerScoreElement.textContent = cScore;
+    roundResultElement.style.color = '#e10600';
+    roundResultElement.textContent = `You lose this round! ${upperComputerChoice} beats ${upperPlayerChoice}.`;
   } else {
-    roundResult.style.color = 'black';
-    roundResult.textContent = 'Tie Game! No winner, no loser. Go again!';
+    roundResultElement.style.color = 'black';
+    roundResultElement.textContent = 'Tie Game! No winner, no loser. Go again!';
   }
 
+  winGame(pScore);
+  loseGame(cScore);
+}
+
+// Function to run when game is won
+function winGame(pScore) {
   if (pScore === 5) {
-    finalResult.style.color = 'lawngreen';
-    roundResult.style.color = 'black';
-    finalResult.textContent = "Congratulations! You've won the game!";
-    roundResult.textContent = 'Click the play again button to restart the game.';
-    reset.firstElementChild.textContent = 'Play Again';
+    finalResultElement.style.color = 'lawngreen';
+    roundResultElement.style.color = 'black';
+    finalResultElement.textContent = "Congratulations! You've won the game!";
+    roundResultElement.textContent = 'Click the play again button to restart the game.';
+    resetElement.firstElementChild.textContent = 'Play Again';
 
     resetItems();
     nonClickable();
   }
+}
 
+// Function to run when game is lost
+function loseGame(cScore) {
   if (cScore === 5) {
-    finalResult.style.color = '#e10600';
-    roundResult.style.color = 'black';
-    finalResult.textContent = "You've lost the game! Give it another try.";
-    roundResult.textContent = 'Click the play again button to restart the game.';
-    reset.firstElementChild.textContent = 'Play Again';
+    finalResultElement.style.color = '#e10600';
+    roundResultElement.style.color = 'black';
+    finalResultElement.textContent = "You've lost the game! Give it another try.";
+    roundResultElement.textContent = 'Click the play again button to restart the game.';
+    resetElement.firstElementChild.textContent = 'Play Again';
 
     resetItems();
     nonClickable();
@@ -92,7 +102,7 @@ function playGame() {
 
   resetGame();
   
-  Array.from(playerItems).forEach(playerItem => {
+  Array.from(playerItemsElements).forEach(playerItem => {
     playerItem.addEventListener('click', e => {
       resetItems();
 
@@ -113,16 +123,16 @@ function playGame() {
 
 // Function to reset the game
 function resetGame() {
-  reset.addEventListener('click', () => {
+  resetElement.addEventListener('click', () => {
     pScore = 0;
     cScore = 0;
-    playerScore.textContent = pScore;
-    computerScore.textContent = cScore;
-    roundResult.style.color = 'black';
-    finalResult.style.color = 'black';
-    roundResult.textContent = 'Choose between Rock, Paper and Scissors!';
-    finalResult.textContent = "First to score five wins the game!";
-    reset.firstElementChild.textContent = 'Reset';
+    playerScoreElement.textContent = pScore;
+    computerScoreElement.textContent = cScore;
+    roundResultElement.style.color = 'black';
+    finalResultElement.style.color = 'black';
+    roundResultElement.textContent = 'Choose between Rock, Paper and Scissors!';
+    finalResultElement.textContent = "First to score five wins the game!";
+    resetElement.firstElementChild.textContent = 'Reset';
 
     resetItems();
   });
@@ -130,18 +140,18 @@ function resetGame() {
 
 // Function to reset the playing items
 function resetItems() {
-  Array.from(playerItems).forEach(playerItem => {
+  Array.from(playerItemsElements).forEach(playerItem => {
     playerItem.setAttribute('class', 'w-20 md:w-20 rounded-full cursor-pointer hover:scale-110 hover:border-lightGray hover:border-4 hover:border-solid active:scale-150 active:border-black');
   });
 
-  Array.from(computerItems).forEach(computerItem => {
+  Array.from(computerItemsElements).forEach(computerItem => {
     computerItem.setAttribute('class', 'w-20 md:w-20 rounded-full');
   });
 }
 
 // Function to make player items non-clickable after win or lose
 function nonClickable() {
-  Array.from(playerItems).forEach(playerItem => {
+  Array.from(playerItemsElements).forEach(playerItem => {
     playerItem.setAttribute('class', 'w-20 md:w-20 rounded-full');
   });
 }
